@@ -1,0 +1,6 @@
+lightvnc:
+  image: light-vnc
+  container_name: light-vnc
+  ports:
+    - 5900:5900
+    - 9595:9595

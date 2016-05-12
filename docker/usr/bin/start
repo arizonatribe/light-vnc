@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PASS=`pwgen -c -n -1 10`
+echo "new user 'ubuntu' has password of: $PASS"
+echo "ubuntu:$PASS" | chpasswd
+x11vnc -storepasswd `echo $PASS` /home/ubuntu/.vnc/passwd
+
+exec supervisord -n -c /etc/supervisord.conf
